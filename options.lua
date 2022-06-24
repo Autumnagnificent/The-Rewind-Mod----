@@ -23,6 +23,9 @@ end
 ----------------------------------------------------------------------------------------------------
 
 function init()
+	if GetFloat('savegame.mod.playspeedmax') == 0 then Reset() end
+
+	
 	x0, y0, x1, y1 = UiSafeMargins()
 
 	campos = GetCameraTransform().pos

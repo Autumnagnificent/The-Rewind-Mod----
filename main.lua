@@ -104,11 +104,31 @@ local function ChangeTapeText(i)
 	-- TapeDisplayedText = t[iiii]
 end
 
+local function Reset()
+	SetString("savegame.mod.mode", "rewind")
+	SetFloat('savegame.mod.volume', 0.2)
+	SetFloat('savegame.mod.visualeffects', 0.0)
+	SetInt('savegame.mod.group', 6)
+
+	SetFloat('savegame.mod.playspeedincrement', 1)
+	SetFloat('savegame.mod.playspeedmax', 1)
+	SetFloat('savegame.mod.altrewindspeed', 1)
+	SetBool('savegame.mod.showcassetteplayer', true)
+	SetBool('savegame.mod.onlytrackvisible', false)
+
+	SetFloat('savegame.mod.accuracy', 0.8)
+	SetFloat('savegame.mod.maxdistance', 50)
+	SetBool('savegame.mod.interpolate', true)
+	
+	UiSound("snd/TapeEject.ogg", GetFloat('savegame.mod.volume'))
+end
+
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 
 function init()
-	iiii = 1
+	if GetFloat('savegame.mod.playspeedmax') == 0 then Reset() end 
+	
 	ToolGroup = GetKeyWithDefault("int", "savegame.mod.group", 2) 
 
 	RegisterTool("chrono", "Chrono Cassete Player", "", ToolGroup)
