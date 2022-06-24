@@ -1,0 +1,4 @@
+name = Chrono Cassette Player [The Rewind Mod]
+author = Autumn
+description = [noupload]Check Steam Page for Controls. We do not claim any responsibility for creating tears in time, or rifts inside the confines of your local area, if you start to feel nauseous, consult your doctor within negative 24 hours. ABSOLUTELY NO REFUNDS!
+tags = Tool
