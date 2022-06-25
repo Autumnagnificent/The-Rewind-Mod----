@@ -100,8 +100,6 @@ local function ChangeTapeText(i)
 	else
 		TapeDisplayedText = TapeToasts.Legendary[math.random(1, #TapeToasts.Legendary)]	
 	end
-	-- t = {"Chronomatic", "Chrono", "Chronography", "Time Splitter", "Rift Tearer", "Chaos Subverter", "Epoch Clock", "Era Corrupter", "Time Interpolator", "It's Rewind Time", "SPICY", "! ! ! ! ! ! ! !", "Manipulator", "Burn Me", "Updog", "Hot Stuff", "PRIDE", "Rick Astly", "Behind You"}
-	-- TapeDisplayedText = t[iiii]
 end
 
 local function Reset()
@@ -202,8 +200,7 @@ end
 function tick(dt)
 	local camera = GetCameraTransform()
 
-	if InputPressed('t') then ShowDebug = not ShowDebug end
-	if InputPressed('r') then iiii = iiii + 1 end
+	if InputPressed('t') and GetString("game.player.tool") == "chrono" then ShowDebug = not ShowDebug end
 
 	if PauseMenuButton("Purge Tape") then
 		hardreset()
