@@ -295,6 +295,10 @@ function tick(dt)
 	if TapeRaised <= 0 then
 		ChangeTapeText()
 	end
+
+	-- FOR MODDERS
+	SetFloat('game.rewindmod.time', Time)
+	SetFloat('game.rewindmod.playspeed', PlaySpeed)
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -592,7 +596,7 @@ function draw(dt)
 
 		for key,body in ipairs(GrabHighlight) do
 			if body ~= nil then
-				DrawBodyOutline(body, 0, 1, 0, 1)
+				DrawBodyOutline(body, 0, 1, 0, 0.25)
 				GrabHighlight[key] = nil
 			else
 				GrabHighlight[key] = nil
